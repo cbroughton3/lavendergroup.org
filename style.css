@@ -24,7 +24,7 @@ body > * {
 
 .top-bar {
 	align-items: center;
-	background-color: #460889;
+	background-color: #ffffff;
 	display: flex;
 	justify-content: center;
 	padding: 1rem;
@@ -38,7 +38,6 @@ body > * {
 
 .logo img {
 	height: 3rem;
-	filter: brightness(0) invert(1);
 	width: 4rem;
 }
 
@@ -48,7 +47,7 @@ body > * {
 }
 
 .top-bar a {
-	color: #ffffff;
+	color: #460889;
 	text-decoration: none;
 }
 
