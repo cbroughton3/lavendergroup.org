@@ -17,6 +17,14 @@ body::before {
 	z-index: 0;
 }
 
+
+
+h1 {
+    color: #460889;
+    font-size: 4rem;
+    margin: 0;
+}
+
 body > * {
 	position: relative;
 	z-index: 1;
@@ -27,7 +35,7 @@ body > * {
 	background-color: #ffffff;
 	display: flex;
 	justify-content: center;
-	padding: 1rem;
+	padding: 1.5rem 1rem;
 	position: relative;
 }
 
@@ -37,13 +45,18 @@ body > * {
 }
 
 .logo img {
-	height: 3rem;
-	width: 4rem;
+	display: block;
+	height: 4rem;
+	width: auto;
 }
 
 .nav-links {
 	display: flex;
 	gap: 2rem;
+}
+
+.nav-links a {
+	font-weight: 700;
 }
 
 .top-bar a {
@@ -56,7 +69,53 @@ body > * {
 	text-decoration: underline;
 }
 
+.mainbox, .bbox {
+	background-color: #ffffff;
+	border-radius: 10px;
+	box-sizing: border-box;
+	display: block;
+	max-width: calc(100% - 2rem);
+	padding: 1rem;
+	width: fit-content;
+}
+
+
+
 .mainbox {
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
+	margin: 25vh 0 0 1rem;
+}
+
+.bbox {
+	border-radius: 0;
+	bottom: 0;
+	left: 0;
+	margin: 0;
+	max-width: none;
+	height: 33.333vh;
+	position: fixed;
+	width: 100%;
+}
+
+@media (max-width: 600px) {
+	.top-bar {
+		flex-direction: column;
+		gap: 1rem;
+		padding: 1rem;
+	}
+
+	.logo {
+		left: auto;
+		position: static;
+	}
+
+	.logo img {
+		height: 3rem;
+	}
+
+	.nav-links {
+		flex-wrap: wrap;
+		gap: 0.75rem 1rem;
+		justify-content: center;
+		width: 100%;
+	}
 }
