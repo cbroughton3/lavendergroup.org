@@ -118,4 +118,11 @@ body > * {
 		justify-content: center;
 		width: 100%;
 	}
+
+	.bbox {
+		height: auto;
+		margin: 15vh 0 0;
+		position: static;
+		width: 100%;
+	}
 }
