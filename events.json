@@ -9,7 +9,15 @@
         "description": "Celebrate the group's 4th birthday!",
         "event_url" : "www.lavendergroup.org"
     },
-
+{
+        "title": "Lavender Group Birthday Party TEST",
+        "location": "TBC",
+        "hasOccurred" : false,
+        "date": "October 2026 - TBC",
+        "partner_org" : "",
+        "description": "Celebrate the group's 4th birthday!",
+        "event_url" : "https://www.eventbrite.co.uk/e/agentic-devops-with-github-representai-bcs-pride-tickets-1989816972128"
+    },
 
         {
         "title": "Christmas Drinks",
