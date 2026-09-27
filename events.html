@@ -58,6 +58,18 @@
         description.textContent = event.description;
         card.append(description);
 
+        if (typeof event.event_url === "string" && event.event_url.trim()) {
+          const signup = document.createElement("p");
+          signup.className = "event-cta";
+
+          const signupLink = document.createElement("a");
+          signupLink.href = event.event_url;
+          signupLink.textContent = "Sign up here";
+          signupLink.rel = "noopener noreferrer";
+          signup.append(signupLink);
+          card.append(signup);
+        }
+
         const partnerOrganizations = Array.isArray(event.partner_org)
           ? event.partner_org
           : event.partner_org

@@ -6,7 +6,8 @@
         "hasOccurred" : false,
         "date": "October 2026 - TBC",
         "partner_org" : "",
-        "description": "Celebrate the group's 4th birthday!"
+        "description": "Celebrate the group's 4th birthday!",
+        "event_url" : ""
     },
 
 
@@ -16,7 +17,9 @@
         "hasOccurred" : false,
         "date": "December 2026 - TBC",
         "partner_org" : "",
-        "description": "Get in to the festive spirit with the Lavender Group!"
+        "description": "Get in to the festive spirit with the Lavender Group!",
+        "event_url" : ""
+
     },
 
 
@@ -26,7 +29,7 @@
         "hasOccurred" : true,
         "date": "24 April 2026",
         "partner_org" : "",
-
+        "event_url" : "",
         "description": "A full-day symposium bringing together professionals to discuss how inclusion can inform organisational practice, decision-making and the design of security, risk and AI systems. The programme included a keynote, panel discussions and interactive workshops."
     },
 
@@ -34,6 +37,7 @@
         "title": "Allyship Revisited: Strengthening Action for LGBTQI+ Security and Rights",
         "location": "London",
         "hasOccurred" : true,
+        "event_url" : "",
         "date": "12 June 2026",
         "partner_org" : ["RUSI", "Women in International Security UK"],
         "partner_url" : ["https://www.rusi.org", "https://wiisglobal.org"],
@@ -44,6 +48,7 @@
         "location": "London",
         "hasOccurred" : true,
         "date": "25 June 2025",
+        "event_url" : "",
         "partner_org" : ["RUSI"],
         "partner_url" : ["https://www.rusi.org"],
         "description": "A discussion held in partnership with RUSI NextGen, exploring the experiences of LGBTQ+ people in security and defence."
