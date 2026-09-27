@@ -91,6 +91,10 @@ body > * {
 	width: calc(100% - 2rem);
 }
 
+.home-title h1 {
+	font-size: 3rem;
+}
+
 .events-page h1 {
 	font-size: 2.5rem;
 }
@@ -156,6 +160,10 @@ body > * {
 	width: 100%;
 }
 
+.bbox h2 {
+	background-color: #ffffff;
+}
+
 @media (max-width: 600px) {
 	.top-bar {
 		flex-direction: column;
@@ -168,6 +176,10 @@ body > * {
 	}
 
 	.events-page h1 {
+		font-size: 2rem;
+	}
+
+	.home-title h1 {
 		font-size: 2rem;
 	}
 
