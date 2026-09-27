@@ -22,9 +22,87 @@
       </div>
     </nav>
 
-    <main class="mainbox">
+    <main class="mainbox events-page">
       <h1>Events</h1>
       <p>Find out about upcoming Lavender Group events.</p>
+      <section class="event-section" aria-labelledby="upcoming-events-heading">
+        <h2 id="upcoming-events-heading">Upcoming events</h2>
+        <div class="event-list" id="upcoming-events"></div>
+      </section>
+      <section class="event-section" aria-labelledby="past-events-heading">
+        <h2 id="past-events-heading">Past events</h2>
+        <div class="event-list" id="past-events"></div>
+      </section>
     </main>
+    <script>
+      const eventSections = {
+        upcoming: document.querySelector("#upcoming-events"),
+        past: document.querySelector("#past-events")
+      };
+
+      function createEventCard(event) {
+        const card = document.createElement("article");
+        card.className = "event-card";
+
+        const title = document.createElement("h3");
+        title.textContent = event.title;
+        card.append(title);
+
+        const details = document.createElement("p");
+        details.className = "event-meta";
+        details.textContent = `${event.date} | ${event.location}`;
+        card.append(details);
+
+        const description = document.createElement("p");
+        description.textContent = event.description;
+        card.append(description);
+
+        if (event.partner_org?.trim()) {
+          const partner = document.createElement("p");
+          partner.className = "event-partner";
+          partner.append("In partnership with ");
+
+          if (event.partner_url) {
+            const partnerLink = document.createElement("a");
+            partnerLink.href = event.partner_url;
+            partnerLink.textContent = event.partner_org;
+            partnerLink.rel = "noopener noreferrer";
+            partner.append(partnerLink);
+          } else {
+            partner.append(event.partner_org);
+          }
+
+          card.append(partner);
+        }
+
+        return card;
+      }
+
+      fetch("events.json")
+        .then((response) => {
+          if (!response.ok) throw new Error("Could not load events");
+          return response.json();
+        })
+        .then((events) => {
+          for (const event of events) {
+            const section = event.hasOccurred ? eventSections.past : eventSections.upcoming;
+            section.append(createEventCard(event));
+          }
+
+          for (const [name, section] of Object.entries(eventSections)) {
+            if (!section.hasChildNodes()) {
+              const emptyState = document.createElement("p");
+              emptyState.className = "event-empty";
+              emptyState.textContent = `No ${name} events at the moment.`;
+              section.append(emptyState);
+            }
+          }
+        })
+        .catch(() => {
+          for (const section of Object.values(eventSections)) {
+            section.textContent = "Events could not be loaded. Please try again later.";
+          }
+        });
+    </script>
   </body>
 </html>
