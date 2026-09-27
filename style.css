@@ -99,6 +99,10 @@ body > * {
 	font-size: 2.5rem;
 }
 
+.recognition-page h2 {
+	color: #460889;
+}
+
 .event-section {
 	margin-top: 2rem;
 }
