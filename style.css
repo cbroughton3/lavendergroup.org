@@ -86,10 +86,6 @@ body > * {
 
 
 .mainbox {
-	margin: 25vh 0 0 1rem;
-}
-
-.events-page {
 	margin: 3rem auto;
 	max-width: 64rem;
 	width: calc(100% - 2rem);
@@ -167,7 +163,7 @@ body > * {
 		padding: 1rem;
 	}
 
-	.events-page {
+	.mainbox {
 		margin: 2rem auto;
 	}
 
