@@ -35,8 +35,8 @@
         "location": "London",
         "hasOccurred" : true,
         "date": "12 June 2026",
-        "partner_org" : "RUSI",
-        "partner_url" : "https://www.rusi.org",
+        "partner_org" : ["RUSI", "Women in International Security UK"],
+        "partner_url" : ["https://www.rusi.org", "https://www.wis-uk.org"],
         "description": "A panel discussion with RUSI NextGen and Women in International Security UK on LGBTQ+ rights and allyship in the security community."
     },
                 {
@@ -44,8 +44,8 @@
         "location": "London",
         "hasOccurred" : true,
         "date": "25 June 2025",
-        "partner_org" : "RUSI",
-        "partner_url" : "https://www.rusi.org",
+        "partner_org" : ["RUSI"],
+        "partner_url" : ["https://www.rusi.org"],
         "description": "A discussion held in partnership with RUSI NextGen, exploring the experiences of LGBTQ+ people in security and defence."
     }
 

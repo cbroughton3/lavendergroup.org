@@ -57,20 +57,41 @@
         description.textContent = event.description;
         card.append(description);
 
-        if (event.partner_org?.trim()) {
+        const partnerOrganizations = Array.isArray(event.partner_org)
+          ? event.partner_org
+          : event.partner_org
+            ? [event.partner_org]
+            : [];
+        const partnerUrls = Array.isArray(event.partner_url)
+          ? event.partner_url
+          : event.partner_url
+            ? [event.partner_url]
+            : [];
+        const partners = partnerOrganizations
+          .map((organization, index) => ({
+            organization,
+            url: partnerUrls[index]
+          }))
+          .filter(({ organization }) => typeof organization === "string" && organization.trim());
+
+        if (partners.length) {
           const partner = document.createElement("p");
           partner.className = "event-partner";
           partner.append("In partnership with ");
 
-          if (event.partner_url) {
-            const partnerLink = document.createElement("a");
-            partnerLink.href = event.partner_url;
-            partnerLink.textContent = event.partner_org;
-            partnerLink.rel = "noopener noreferrer";
-            partner.append(partnerLink);
-          } else {
-            partner.append(event.partner_org);
-          }
+          partners.forEach(({ organization, url }, index) => {
+            if (index > 0) partner.append(index === partners.length - 1 ? " and " : ", ");
+
+            if (url) {
+              const partnerLink = document.createElement("a");
+              partnerLink.href = url;
+              partnerLink.textContent = organization;
+              partnerLink.rel = "noopener noreferrer";
+              partner.append(partnerLink);
+            } else {
+              partner.append(organization);
+            }
+          });
 
           card.append(partner);
         }
